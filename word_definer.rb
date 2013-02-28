@@ -29,6 +29,9 @@ class MerriamWebsterApi
     @word = init_word
   end
 
+  # Some of these functions will be delegated to a WordDefinition object.
+  #   This shouldn't really be a responsibility of this class. These Api/scrapper classes should really only be concerned with the API call.
+  #   Thus this class CAN return a Definition, but not be concerned about that parsing
   def simple_definitions
     # TODO transform raw_definitions to REXML object THEN:
     # each_element('//dt'){ |el| puts Sanitize.clean(el) }
